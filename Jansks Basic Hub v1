@@ -1,0 +1,48 @@
+--MADE BY JANSKUMBRIA, DO NOT SKID OR STEAL
+
+
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Jansk's baisic hub", colors)
+
+
+-- Movement
+local MovementTab = Window:NewTab("Movement")
+local WalkSection = MovementTab:NewSection("Walking")
+local JumpSection = MovementTab:NewSection("Jumping")
+local FixSection = MovementTab:NewSection("Fix jump power and Walk")
+WalkSection:NewSlider("Walkspeed", "amount of u going WEEE", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+JumpSection:NewSlider("Jump power", "a-a-ah ah boing boing daddy~", 500, 58, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+FixSection:NewButton("Fix jump power and walk power", "i just told u", function()
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 58
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+end)
+
+-- Bypassers
+local BypassTab = Window:NewTab("Swear word bypass")
+local BSection = BypassTab:NewSection("Bypass swear words (not mine)")
+BSection:NewButton("Bypass swear words script", "balls", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/BakaPraselol/MRCBV4LSB4KRS/main/Loader"))()
+end)
+
+-- Socials
+local STab = Window:NewTab("Social's")
+local SSection = STab:NewSection("Our socials")
+SSection:NewLabel("Discord: https://discord.gg/T2kgPk8GyP")
+
+--settings
+
+local SSTab = Window:NewTab("Settings")
+local SSSection = SSTab:NewSection(".")
+
+SSSection:NewKeybind("keybind 2 toggle the gui", "KeybindInfo", Enum.KeyCode.F, function()
+	Library:ToggleUI()
+end)
+
+SSSection:NewLabel ("close with keybind not X")
